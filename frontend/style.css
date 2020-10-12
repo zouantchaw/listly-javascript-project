@@ -41,9 +41,11 @@ html, body {
 #navbar li {
     color: black;
     border-top: 1px solid;
+    border-color: white;
     list-style: none;
     position: relative;
     width: 100;
+    padding: 10px;
 }
 
 /* form input,
@@ -59,6 +61,7 @@ form button {
     font-size: 1rem;
     border: none;
     background: white;
+    margin-left: 50px;
 }
 
 #nav-form button {
@@ -74,4 +77,51 @@ form button {
     color: green;
     background: white;
     cursor: pointer;
+}
+
+#main-section {
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 10%;
+    padding: 20px;
+    margin-bottom: 110px;
+}
+
+#main-section-header {
+    text-align: right;
+    color: black;
+    margin: 20px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: thin;
+}
+
+.main-section-form input,
+.main-section-form button {
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    background: white;
+}
+
+.main-section-form button {
+    color: green;
+    background: white;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.main-section-form button:hover {
+    background: pink;
+    color: green;
+}
+
+.task-container {
+    display: flex;
+    justify-content: center;
+}
+
+.task-list {
+    min-width: 30%;
+    list-style: none;
 }
