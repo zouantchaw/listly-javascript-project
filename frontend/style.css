@@ -1,0 +1,7 @@
+html, body {
+    min-width: 290px;;
+    color: black;
+    background-color: pink;
+    font-family: "Open Sans", Arial, sans-serif;
+    line-height: 1.5;
+}
