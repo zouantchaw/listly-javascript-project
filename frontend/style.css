@@ -24,3 +24,11 @@ header {
     font-size: 1.8em;
     font-weight: thin;
 }
+
+#navbar ul {
+    height: 88%;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
