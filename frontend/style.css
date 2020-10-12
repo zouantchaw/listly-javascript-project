@@ -5,3 +5,22 @@ html, body {
     font-family: "Open Sans", Arial, sans-serif;
     line-height: 1.5;
 }
+
+#navbar {
+    position: fixed;
+    min-width: 290px;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 100%;
+    border-right: solid;
+    border-color: white;
+}
+
+header {
+    color: black;
+    margin: 20px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: thin;
+}
