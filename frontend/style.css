@@ -23,7 +23,7 @@ html, body {
     border-color: white;
 }
 
-header {
+#nav-header {
     color: black;
     margin: 20px;
     text-align: center;
@@ -55,8 +55,19 @@ form button {
 } */
 
 #nav-form input {
-    padding: 0;
-    margin: 20
+    padding: 0.2rem;
+    font-size: 1rem;
+    border: none;
+    background: white;
+}
+
+#nav-form button {
+    padding: 0.2rem;
+    font-size: 1rem;
+    border: none;
+    background: white;
+    height: 20px;
+    width: 20px;
 }
 
 form button {
