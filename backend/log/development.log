@@ -312,3 +312,102 @@ Processing by ListsController#index as HTML
 Completed 200 OK in 153ms (Views: 0.3ms | ActiveRecord: 10.2ms | Allocations: 14337)
 
 
+Started GET "/lists" for ::1 at 2020-10-20 19:43:04 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/wiel/Development/code/listly-javascript-project/backend/app/controllers/lists_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ']'
+...@list = List.find_by[:id params[:id]]
+...                         ^~~~~~
+/Users/wiel/Development/code/listly-javascript-project/backend/app/controllers/lists_controller.rb:9: syntax error, unexpected ']', expecting end
+...= List.find_by[:id params[:id]]
+...                              ^):
+  
+app/controllers/lists_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ']'
+app/controllers/lists_controller.rb:9: syntax error, unexpected ']', expecting end
+app/controllers/lists_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ']'
+app/controllers/lists_controller.rb:9: syntax error, unexpected ']', expecting end
+Started GET "/lists" for ::1 at 2020-10-20 19:43:53 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/wiel/Development/code/listly-javascript-project/backend/app/controllers/lists_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+...@list = List.find_by(:id params[:id])
+...                         ^~~~~~
+/Users/wiel/Development/code/listly-javascript-project/backend/app/controllers/lists_controller.rb:9: syntax error, unexpected ')', expecting end
+...= List.find_by(:id params[:id])
+...                              ^):
+  
+app/controllers/lists_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/lists_controller.rb:9: syntax error, unexpected ')', expecting end
+app/controllers/lists_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/lists_controller.rb:9: syntax error, unexpected ')', expecting end
+Started GET "/lists" for ::1 at 2020-10-20 19:44:57 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mListItem Load (0.2ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", "1"]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mListItem Load (0.2ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", "2"]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mListItem Load (0.9ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", "3"]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 143ms (Views: 7.6ms | ActiveRecord: 6.8ms | Allocations: 11947)
+
+
+Started GET "/lists" for ::1 at 2020-10-20 19:45:07 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ListsController#index as HTML
+  [1m[36mList Load (1.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mListItem Load (0.6ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", "1"]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mListItem Load (0.3ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", "2"]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mListItem Load (0.2ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", "3"]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 72ms (Views: 0.3ms | ActiveRecord: 5.8ms | Allocations: 11858)
+
+
+Started GET "/lists/1" for ::1 at 2020-10-20 19:45:12 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (pry):2:in `show'
+Started GET "/lists" for ::1 at 2020-10-20 19:46:17 -0400
+Completed 204 No Content in 78531ms (ActiveRecord: 0.4ms | Allocations: 21880)
+
+
+Started GET "/lists/1" for ::1 at 2020-10-20 19:46:31 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mListItem Load (0.2ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", "1"]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mListItem Load (0.2ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", "2"]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mListItem Load (0.3ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", "3"]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 53ms (Views: 3.5ms | ActiveRecord: 3.8ms | Allocations: 11912)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:9:in `show'
+  [1m[36mListItem Load (0.5ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", "1"]]
+  ↳ app/controllers/lists_controller.rb:10:in `show'
+Completed 200 OK in 48ms (Views: 0.4ms | ActiveRecord: 5.9ms | Allocations: 9581)
+
+
+Started GET "/lists/2" for ::1 at 2020-10-20 19:46:38 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:9:in `show'
+  [1m[36mListItem Load (7.6ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", "2"]]
+  ↳ app/controllers/lists_controller.rb:10:in `show'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 7.8ms | Allocations: 1672)
+
+
