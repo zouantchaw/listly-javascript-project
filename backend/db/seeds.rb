@@ -9,4 +9,16 @@
 list_a = List.create(name: "Shopping List")
 list_b = List.create(name: "Weekly Workout")
 list_c = List.create(name: "Fav Books")
-list_d = List.create(name: "Grades")
+
+list_item_1a = list_a.list_items.create(content: "Milk")
+list_item_2a = list_a.list_items.create(content: "Cheese")
+list_item_3a = list_a.list_items.create(content: "Yogurt")
+
+list_item_1b = list_a.list_items.create(content: "Mon: 100 Push ups")
+list_item_2b = list_b.list_items.create(content: "Tues: 20 Sit Ups")
+list_item_3b = list_b.list_items.create(content: "Wed: 100 Jumping Jacks")
+
+list_item_1c = list_c.list_items.create(content: "Waking Up")
+list_item_2c = list_c.list_items.create(content: "Sidartha")
+list_item_3c = list_c.list_items.create(content: "The Book of Life")
+
