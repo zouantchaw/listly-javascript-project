@@ -55,3 +55,10 @@ Migrating to CreateListItems (20201019233635)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mList Create (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Grades"], ["created_at", "2020-10-20 00:02:04.552051"], ["updated_at", "2020-10-20 00:02:04.552051"]]
   [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mListItem Load (0.4ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ? LIMIT ?[0m  [["list_id", 1], ["LIMIT", 11]]
+  [1m[36mListItem Load (1.8ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mListItem Load (0.9ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ? LIMIT ?[0m  [["list_id", 1], ["LIMIT", 11]]
