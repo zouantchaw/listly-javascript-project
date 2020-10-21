@@ -28,6 +28,11 @@ class ListsController < ApplicationController
         end
     end
 
+    def destroy
+        @list = List.find_by(id: params[:id])
+        @list.destroy
+    end
+
     private
     def list_params
         params.require(:list).permit(:id, :name)
