@@ -19,6 +19,15 @@ class ListsController < ApplicationController
         end
     end
 
+    def update
+        @list = List.find_by(id: params[:id])
+        if @list.update(list_params)
+            render json: @list.as_json(include: {list_items: {only:[:content]}}) 
+        else 
+            render json: @list.errors, status: :unprocessable_entity
+        end
+    end
+
     private
     def list_params
         params.require(:list).permit(:id, :name)
