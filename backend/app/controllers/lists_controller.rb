@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
-
+    # Add before_action filter to show update and destroy 
+    
     def index
         @lists = List.all
         render json: @lists.as_json(include: {list_items: {only:[:content]}}) 
