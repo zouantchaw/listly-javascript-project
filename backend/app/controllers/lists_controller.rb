@@ -11,7 +11,12 @@ class ListsController < ApplicationController
     end
 
     def create
-        @list = List.new()
+        @list = List.new(list_params)
+        if @list.save
+            render json: @list.as_json(include: {list_items: {only:[:content]}}) 
+        else 
+            render json: @list.errors, status: :unprocessable_entity
+        end
     end
 
     private
