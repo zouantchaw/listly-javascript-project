@@ -1,3 +1,8 @@
+const BASE_URL = "http://localhost:3000/";
+const LISTS_URL = `${BASE_URL}/lists`;
+
+
+
 // Selectors 
 const listNav = document.querySelector(".all-lists")
 document.addEventListener("DOMContentLoaded", function () {
