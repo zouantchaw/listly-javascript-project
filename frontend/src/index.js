@@ -1,6 +1,7 @@
 // Server URLS 
 const BASE_URL = "http://localhost:3000/";
 const LISTS_URL = `${BASE_URL}/lists`;
+let updatedLists; 
 
 // Selectors 
 const listNav = document.querySelector(".all-lists")
@@ -16,7 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function fetchLists() {
     fetch(LISTS_URL)
     .then(resp => resp.json())
-    .then(json => displayListAndItems(json))
+    .then(json => {
+        displayListAndItems(json)
+        updatedLists = json
+    })
 }
 
 // Adds Lists and contents of first list to the DOM on page load
@@ -58,24 +62,40 @@ function tagEvents() {
    const lists = document.getElementsByClassName('list-item')
    for (const list of lists) {
        list.addEventListener('click', () => {
-        displayClickedList(list.innerText)
+          displayClickedList(list.innerText)
        } )
    }
 }
 
 function displayClickedList(listName) {
+    // Fist we empty the inner html
+    document.querySelector('.task-list').innerHTML = ""
     console.log(listName)
-    // debugger
-    // fetch(LISTS_URL)
-    // .then(resp => resp.json())
-    // .then(json => console.log(json))
+    for (const list of updatedLists) {
+        if (list.name === listName) {
+            for (const listItem of list.list_items) {
+                let listItemDiv = document.createElement('div')
+                listItemDiv.className = "todo"
+        
+                let listItemLi = document.createElement('li')
+                listItemLi.className = "todo-item"
+                listItemLi.innerText = listItem.content
+        
+                let listItemBtn1 = document.createElement('button')
+                listItemBtn1.className = "complete-btn"
+                listItemBtn1.innerHTML = `<i class="fas fa-check"></i>`
+        
+                let listItemBtn2 = document.createElement('button')
+                listItemBtn2.className = "trash-btn"
+                listItemBtn2.innerHTML = `<i class="fas fa-trash"></i>`
+        
+                listItemDiv.appendChild(listItemLi)
+                listItemDiv.appendChild(listItemBtn1)
+                listItemDiv.appendChild(listItemBtn2)
+                taskList.appendChild(listItemDiv)
+            }
+        }
+    }
 }
 
 
-const allLists = () => {
-    fetch(LISTS_URL)
-    .then(resp => resp.json())
-    .then(json => {
-        console.log(json)  
-    })
-}
