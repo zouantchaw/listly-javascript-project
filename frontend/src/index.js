@@ -53,9 +53,29 @@ function displayListAndItems(json) {
     tagEvents()
 };
 
+//tags events listeners to lists after page has loaded 
 function tagEvents() {
-   const lists = Array.from(document.getElementsByClassName('list-item'))
-    debugger
+   const lists = document.getElementsByClassName('list-item')
+   for (const list of lists) {
+       list.addEventListener('click', () => {
+        displayClickedList(list.innerText)
+       } )
+   }
+}
+
+function displayClickedList(listName) {
+    console.log(listName)
+    // debugger
+    // fetch(LISTS_URL)
+    // .then(resp => resp.json())
+    // .then(json => console.log(json))
 }
 
 
+const allLists = () => {
+    fetch(LISTS_URL)
+    .then(resp => resp.json())
+    .then(json => {
+        console.log(json)  
+    })
+}
