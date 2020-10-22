@@ -109,5 +109,5 @@ function displayClickedList(listName) {
     }
 }
 function createList() {
-    
+    new List(listInput.value)
 }
