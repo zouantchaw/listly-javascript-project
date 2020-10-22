@@ -1,0 +1,6 @@
+// When the DOM Loads:
+// Render all lists in the left nav 
+// Render the first lists contents on main screen
+-------------------------------------------------
+
+// 
