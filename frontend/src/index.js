@@ -4,27 +4,34 @@ const LISTS_URL = `${BASE_URL}/lists`;
 // Selectors 
 const listNav = document.querySelector(".all-lists")
 
+
 // When the DOM Loads:
 // Render all lists in the left nav 
 // Render the first lists contents on main screen
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log('DOM LOADED BABAY')
-    displayListAndItems()
+    fetchLists()
 });
-
-function displayListAndItems() {
-    debugger
-};
 
 // Fetches All Lists from server 
 function fetchLists() {
     fetch(LISTS_URL)
     .then(resp => resp.json())
-    .then(json => {
-        return json
-    })
+    .then(json => displayListAndItems(json))
 }
+
+function displayListAndItems(json) {
+    for (const list of json) {
+        // let listItemDiv = document.createElement('div')
+        // listItemDiv.className = "todo"
+        let listElement = document.createElement('li')
+        listElement.className = "list-item"
+        listElement.innerText = list.name 
+        listNav.appendChild(listElement)
+    }
+};
+
 
 
 
