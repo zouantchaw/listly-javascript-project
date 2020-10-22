@@ -3,4 +3,6 @@
 // Render the first lists contents on main screen
 -------------------------------------------------
 
-// 
+// When the DOM loads: (Cant do this on DOM load bc I have to wait for lists to load. So better if I tag events after the list have loaded)
+// Add event listener to lists
+// When clicked, the contents of clicked list should be displayed to main screen

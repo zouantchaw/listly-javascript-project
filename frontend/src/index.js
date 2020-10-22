@@ -48,9 +48,14 @@ function displayListAndItems(json) {
         listItemDiv.appendChild(listItemBtn1)
         listItemDiv.appendChild(listItemBtn2)
         taskList.appendChild(listItemDiv)
-    }        
+    } 
+    // Calls function to tag event listeners to each list
+    tagEvents()
 };
 
-
+function tagEvents() {
+   const lists = Array.from(document.getElementsByClassName('list-item'))
+    debugger
+}
 
 
