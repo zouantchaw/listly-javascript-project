@@ -116,6 +116,11 @@ form button {
     color: white;
 }
 
+.list-item:hover {
+    background:  #ff6f47;
+    color: white;
+}
+
 .task-container {
     display: flex;
     justify-content: center;
