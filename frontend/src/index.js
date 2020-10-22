@@ -1,3 +1,4 @@
+// Server URLS 
 const BASE_URL = "http://localhost:3000/";
 const LISTS_URL = `${BASE_URL}/lists`;
 
@@ -5,23 +6,20 @@ const LISTS_URL = `${BASE_URL}/lists`;
 const listNav = document.querySelector(".all-lists")
 const taskList = document.querySelector(".task-list")
 
-
-// When the DOM Loads:
-// Render all lists in the left nav 
-// Render the first lists contents on main screen
-
+// Actions for when the DOM Loads 
 document.addEventListener("DOMContentLoaded", () => {
     console.log('DOM LOADED BABAY')
     fetchLists()
 });
 
-// Fetches All Lists from server 
+// Fetches All Lists from server and passes it to displayListAndItems()
 function fetchLists() {
     fetch(LISTS_URL)
     .then(resp => resp.json())
     .then(json => displayListAndItems(json))
 }
 
+// Adds Lists and contents of first list to the DOM on page load
 function displayListAndItems(json) {
     document.querySelector('#main-section-header').innerHTML = json[0].name
     for (const list of json) {
