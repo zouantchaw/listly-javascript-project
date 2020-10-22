@@ -6,6 +6,10 @@ let updatedLists;
 // Selectors 
 const listNav = document.querySelector(".all-lists")
 const taskList = document.querySelector(".task-list")
+const listForm = document.querySelector("#nav-form")
+const listInput = document.querySelector(".list-input")
+
+
 
 // Actions for when the DOM Loads 
 document.addEventListener("DOMContentLoaded", () => {
@@ -60,6 +64,13 @@ function displayListAndItems(json) {
 //tags events listeners to lists after page has loaded 
 function tagEvents() {
    const lists = document.getElementsByClassName('list-item')
+   
+   listForm.addEventListener('submit', (e) => {
+       debugger
+       e.preventDefault();
+       createList()
+   })
+
    for (const list of lists) {
        list.addEventListener('click', () => {
           displayClickedList(list.innerText)
@@ -97,5 +108,6 @@ function displayClickedList(listName) {
         }
     }
 }
-
-
+function createList() {
+    
+}
