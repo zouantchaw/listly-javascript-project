@@ -1,24 +1,49 @@
 const BASE_URL = "http://localhost:3000/";
 const LISTS_URL = `${BASE_URL}/lists`;
 
-
-
 // Selectors 
 const listNav = document.querySelector(".all-lists")
-document.addEventListener("DOMContentLoaded", function () {
-    fetch("http://localhost:3000/lists")
-    .then(response => response.json())
-    .then(json => loadLists(json))
-})
 
-function loadLists(object) {
-    for (const list of object) {
-        let listItemDiv = document.createElement('div')
-        listItemDiv.className = "todo"
-        // let listItem
-        let listElement = document.createElement('li')
-        listElement.className = "list-item"
-        listElement.innerText = list.name 
-        listNav.appendChild(listElement)
-    }
+// When the DOM Loads:
+// Render all lists in the left nav 
+// Render the first lists contents on main screen
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log('DOM LOADED BABAY')
+    displayListAndItems()
+});
+
+function displayListAndItems() {
+    debugger
+};
+
+// Fetches All Lists from server 
+function fetchLists() {
+    fetch(LISTS_URL)
+    .then(resp => resp.json())
+    .then(json => {
+        return json
+    })
 }
+
+
+
+
+
+// document.addEventListener("DOMContentLoaded",  () {
+//     fetch("http://localhost:3000/lists")
+//     .then(response => response.json())
+//     .then(json => loadLists(json))
+// })
+
+// function loadLists(object) {
+//     for (const list of object) {
+//         let listItemDiv = document.createElement('div')
+//         listItemDiv.className = "todo"
+//         // let listItem
+//         let listElement = document.createElement('li')
+//         listElement.className = "list-item"
+//         listElement.innerText = list.name 
+//         listNav.appendChild(listElement)
+//     }
+// }
