@@ -109,6 +109,22 @@ function displayClickedList(listName) {
     }
 }
 function createList() {
-    const test = new List(listInput.value)
-    
+    const list = new List(listInput.value)
+    debugger
+    const data = { name: `${list.name}` };
+    fetch('http://localhost:3000/lists', {
+        method: 'POST', 
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        list.renderNewList(list.name)
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });    
 }
