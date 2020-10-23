@@ -66,7 +66,7 @@ function tagEvents() {
    const lists = document.getElementsByClassName('list-item')
    
    listForm.addEventListener('submit', (e) => {
-       debugger
+       
        e.preventDefault();
        createList()
    })
@@ -109,5 +109,6 @@ function displayClickedList(listName) {
     }
 }
 function createList() {
-    new List(listInput.value)
+    const test = new List(listInput.value)
+    
 }
